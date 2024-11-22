@@ -16,4 +16,10 @@ describe("String Calculator", () => {
     it("sholud support newlines as delimeters", () => {
         expect(stringCalculator("1\n2,3")).toBe(6);
     });
+
+    //test for custom delimeters
+    it("sholud support custom delimeters", () => {
+        expect(stringCalculator("//;\n1;2")).toBe(3);
+    });
+
 });
