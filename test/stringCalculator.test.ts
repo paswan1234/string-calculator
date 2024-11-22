@@ -34,5 +34,10 @@ describe("String Calculator", () => {
         expect(stringCalculator("//[*][%%]\n1*2%%3")).toBe(6);
     });
 
+    //test for negative number
+    it("sholud throw error for negative number", () => {
+        expect(() => stringCalculator("//;\n1;-2;3;-4")).toThrow("Negative not allowed : -2,-4");
+    });
+
 
 });
