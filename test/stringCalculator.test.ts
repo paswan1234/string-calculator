@@ -11,4 +11,9 @@ describe("String Calculator", () => {
     it("should retun the sum of comma-seperated number", () => {
         expect(stringCalculator("1,5")).toBe(6);
     });
+
+    //test to newlines as delimeters
+    it("sholud support newlines as delimeters", () => {
+        expect(stringCalculator("1\n2,3")).toBe(6);
+    });
 });
