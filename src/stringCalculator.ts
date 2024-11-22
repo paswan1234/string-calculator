@@ -34,6 +34,12 @@ export function stringCalculator(input: string): number {
 
     const numbers = input.split(delimiters).map(Number);
 
+    // Collect all negative numbers
+    const negatives = numbers.filter((num) => num < 0);
+    if (negatives.length > 0) {
+        throw new Error(`Negative not allowed : ${negatives.join(",")}`);
+    }
+
 
     //validate the number array to ensure all elements are numeric
     if (numbers.some(isNaN)) {
