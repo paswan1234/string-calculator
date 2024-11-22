@@ -1,4 +1,12 @@
 //define function and simply return zero
 export function stringCalculator(input: string): number {
-    return 0;
+
+    //check for empty string and retun zero
+    if (input === "") return 0;
+
+    //split and add input numbers
+    return input
+        .split(",")
+        .map(Number)
+        .reduce((sum, num) => sum + num, 0);
 }
