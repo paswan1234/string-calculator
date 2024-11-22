@@ -21,5 +21,18 @@ describe("String Calculator", () => {
     it("sholud support custom delimeters", () => {
         expect(stringCalculator("//;\n1;2")).toBe(3);
     });
+    //test for custom multi character delimeters
+    it("should handle multi-character custom delimiter", () => {
+        expect(stringCalculator("//[***]\n1***2***3")).toBe(6);
+    });
+    //test for custom multiple character delimeters
+    it("should handle multiple custom delimiters", () => {
+        expect(stringCalculator("//[*][%]\n1*2%3")).toBe(6);
+    });
+    //test for custom multiple character delimeters
+    it("should handle mixed multi-character custom delimiters", () => {
+        expect(stringCalculator("//[*][%%]\n1*2%%3")).toBe(6);
+    });
+
 
 });
