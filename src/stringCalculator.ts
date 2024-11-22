@@ -6,7 +6,7 @@ export function stringCalculator(input: string): number {
 
     //split and add input numbers
     return input
-        .split(",")
+        .split("/,|\n/") //RegEx to accept commas and newlines
         .map(Number)
         .reduce((sum, num) => sum + num, 0);
 }
