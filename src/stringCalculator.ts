@@ -6,15 +6,17 @@ export function stringCalculator(input: string): number {
 
     let delimiters = /,|\n/; // Match commas or newlines
 
-    // Check for custom delimiter syntax: "//<delimiter>\n<number sequence>"
-    if (input.startsWith("//")) {
+    const isCustomDelimeter = input.startsWith('//');
+
+
+    if (isCustomDelimeter) {
         const delimiterMatch = input.match(/^\/\/(\[.*?\]|.)\n/);
 
         if (delimiterMatch) {
             const rawDelimiters = delimiterMatch[1];
 
             if (rawDelimiters.startsWith("[") && rawDelimiters.endsWith("]")) {
-                // Multiple or long delimiters (e.g., //[***][%%])
+                // Multiple or long delimiters (e.g., //[**1*][%%])
                 delimiters = new RegExp(
                     rawDelimiters
                         .slice(1, -1) // Remove enclosing brackets
